@@ -6,18 +6,18 @@ const loader = document.getElementById('loader')
 
 let apiQuotes = []
 
-function loading() {
+function loadingInProgress() {
     loader.hidden = false;
     quoteContainer.hidden = true
 }
 
-function complete() {
+function completeLoading() {
     quoteContainer.hidden = false
     loader.hidden = true
 }
 
 function newQoute() {
-    loading()
+    loadingInProgress()
     const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)]
 
     if(!quote.author) {
@@ -34,13 +34,13 @@ function newQoute() {
     }
 
     quoteText.textContent = quote.text
-    complete()
+    completeLoading()
 }
 
 newQuoteBtn.addEventListener("click", newQoute)
 
 async function getQuotes() {
-    loading()
+    loadingInProgress()
     const apiUrl = 'https://type.fit/api/quotes'
     try {
         const response = await fetch(apiUrl)
