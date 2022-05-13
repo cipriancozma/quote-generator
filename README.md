@@ -1,2 +1,2 @@
 # quote-generator
-A quote generator using an external API done with vanilla JS, HTML and CSS
+A Quote Generator App using an external API done with Vanilla JS, HTML and CSS.
